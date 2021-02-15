@@ -1,24 +1,22 @@
-# README
+# Skylight & Fibers
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A dummy app for trying to get the [Skylight agent] to work nicely with the
+[fiber-based batching API] of GraphQL Ruby.
 
-Things you may want to cover:
+It uses a [patched version] of the agent that replaces the usage of
+thread-local & fiber-local variables (`Thread#[]` & `Thread#[]=`) with
+thread-local only variables (`Thread#thread_variable_get` & `Thread#thread_variable_set`).
 
-* Ruby version
+Install all dependencies with `bin/setup` and then run `rails db:seed` to fill
+the database with test data.
 
-* System dependencies
+You'll need to create a Skylight application and create a `.env` file with
+the `SKYLIGHT_AUTHENTICATION` token of the app.
 
-* Configuration
+Now you can start the server with `rails s` and use the `rails generate_calls`
+rake task to make requests against the GraphQL endpoint. The task will keep
+making requests until you cancel it.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[Skylight agent]: https://github.com/skylightio/skylight-ruby
+[fiber-based batching API]: https://graphql-ruby.org/dataloader/overview.html
+[patched version]: https://github.com/check24-profis/skylight-ruby/commit/abe07290bcbca1b2c13c8dba17d539e40ba929a9
