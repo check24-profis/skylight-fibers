@@ -11,7 +11,7 @@ gem 'graphql-client'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 6.1.1'
-gem 'skylight'
+gem 'skylight', github: 'check24-profis/skylight-ruby', branch: "fibers"
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
