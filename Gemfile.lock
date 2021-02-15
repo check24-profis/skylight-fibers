@@ -67,9 +67,12 @@ GEM
     concurrent-ruby (1.1.8)
     crass (1.0.6)
     erubi (1.10.0)
+    faker (2.16.0)
+      i18n (>= 1.6, < 2)
     ffi (1.14.2)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    graphql (1.12.4)
     i18n (1.8.9)
       concurrent-ruby (~> 1.0)
     listen (3.4.1)
@@ -129,6 +132,10 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    skylight (4.3.2)
+      skylight-core (= 4.3.2)
+    skylight-core (4.3.2)
+      activesupport (>= 4.2.0)
     spring (2.1.1)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
@@ -151,10 +158,13 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
+  faker
+  graphql
   listen (~> 3.3)
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 6.1.1)
+  skylight
   spring
 
 RUBY VERSION
